@@ -7,8 +7,8 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.util.UUID;
 
-public class UUIDUtils {
-	private UUIDUtils() {}
+public class IdUtils {
+	private IdUtils() {}
 
 	public static java.util.UUID generateTimeBasedUUID() {
 		return Generators.timeBasedEpochRandomGenerator().generate();

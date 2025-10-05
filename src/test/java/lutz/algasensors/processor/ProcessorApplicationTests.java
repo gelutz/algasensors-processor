@@ -1,6 +1,6 @@
 package lutz.algasensors.processor;
 
-import lutz.algasensors.processor.utils.UUIDUtils;
+import lutz.algasensors.processor.utils.IdUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,12 +13,12 @@ class ProcessorApplicationTests {
 
 	@Test
 	void shouldGenerateUUIDv7() {
-		var uuid1 = UUIDUtils.generateTimeBasedUUID();
+		var uuid1 = IdUtils.generateTimeBasedUUID();
 
 		OffsetDateTime currentTime = OffsetDateTime
 				.now()
 				.truncatedTo(ChronoUnit.MINUTES);
-		OffsetDateTime uuidTime = UUIDUtils
+		OffsetDateTime uuidTime = IdUtils
 				.extractOffsetDateTime(uuid1)
 				.truncatedTo(ChronoUnit.MINUTES);
 
