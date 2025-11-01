@@ -1,13 +1,12 @@
 package lutz.algasensors.processor;
 
-import java.time.OffsetDateTime;
-import java.time.temporal.ChronoUnit;
-
+import lutz.algasensors.processor.common.IdUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import lutz.algasensors.processor.utils.IdUtils;
+import java.time.OffsetDateTime;
+import java.time.temporal.ChronoUnit;
 
 @SpringBootTest
 class ProcessorApplicationTests {
