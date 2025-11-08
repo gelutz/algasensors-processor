@@ -1,0 +1,25 @@
+package lutz.algasensors.processor.api.config.jackson;
+
+import com.fasterxml.jackson.databind.Module;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import io.hypersistence.tsid.TSID;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class JacksonConfiguration {
+
+	@Bean
+	public Module tsidModule() {
+		SimpleModule module = new SimpleModule();
+		module.addSerializer(TSID.class, new TSIDToStringSerializer());
+		return module;
+	}
+
+	@Bean
+	public Jackson2JsonMessageConverter jackson2JsonMessageConverter(ObjectMapper om) {
+		return new Jackson2JsonMessageConverter(om);
+	}
+}

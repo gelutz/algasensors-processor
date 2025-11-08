@@ -3,9 +3,10 @@ package lutz.algasensors.processor.api.model;
 import io.hypersistence.tsid.TSID;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
-public record TemperatureLog(
-		TemperatureLogId id,
+public record TemperatureLogData(
+		UUID id,
 		TSID sensorId,
 		OffsetDateTime registeredAt,
 		Double value) {
