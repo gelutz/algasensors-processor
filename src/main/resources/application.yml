@@ -1,9 +1,23 @@
 spring.application.name: processor
 
-server.port: '8082'
+server.port: "8082"
 spring:
   rabbitmq:
-    host: localhost
+    host: algasensors-rabbitmq
     port: 5672
     username: rabbitmq
     password: rabbitmq
+
+logging:
+  level:
+    root: INFO
+    lutz.algasensors: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: /app/logs/processor.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 10
