@@ -7,13 +7,15 @@ import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import lombok.NonNull;
+
 @Configuration
 public class RabbitMQConfig {
 
 	public static final String FANOUT_EXCHANGE_NAME = "processor.temperature-received.v1.e";
 
 	@Bean
-	public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
+	public RabbitAdmin rabbitAdmin(@NonNull ConnectionFactory connectionFactory) {
 		return new RabbitAdmin(connectionFactory);
 	}
 
