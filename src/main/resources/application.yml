@@ -3,7 +3,7 @@ spring.application.name: processor
 server.port: "8082"
 spring:
   rabbitmq:
-    host: algasensors-rabbitmq
+    host: rabbitmq
     port: 5672
     username: rabbitmq
     password: rabbitmq
